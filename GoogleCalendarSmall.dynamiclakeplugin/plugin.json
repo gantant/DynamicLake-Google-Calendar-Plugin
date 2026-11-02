@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "identifier": "com.nebulark.google-calendar-small",
+  "name": "Google Calendar Week",
+  "version": "1.1.0",
+  "developerName": "Nebulark",
+  "description": "A one-week calendar in the notch that opens a day's agenda, read from Google Calendar iCal feeds.",
+  "executable": "google-calendar",
+  "arguments": [],
+  "icon": "icon.png",
+  "autoStart": true,
+  "lake": {
+    "size": "small",
+    "glance": {
+      "systemImage": "calendar"
+    }
+  },
+  "settings": [
+    {
+      "id": "weekStartsOn",
+      "type": "select",
+      "title": "Week Starts On",
+      "description": "First column of the month grid and the week strip",
+      "systemImage": "calendar",
+      "tint": "blue",
+      "options": [
+        "System",
+        "Sunday",
+        "Monday",
+        "Saturday"
+      ],
+      "default": "System"
+    },
+    {
+      "id": "timeFormat",
+      "type": "select",
+      "title": "Time Format",
+      "description": "How event times are written in the agenda",
+      "systemImage": "clock",
+      "tint": "blue",
+      "options": [
+        "System",
+        "12-Hour",
+        "24-Hour"
+      ],
+      "default": "System"
+    },
+    {
+      "id": "markBusyDays",
+      "type": "switch",
+      "title": "Highlight Days With Events",
+      "description": "Show days that have events in blue",
+      "systemImage": "circle.fill",
+      "tint": "blue",
+      "default": true
+    },
+    {
+      "id": "showAllDayEvents",
+      "type": "switch",
+      "title": "Show All-Day Events",
+      "description": "Include all-day events in the day's agenda",
+      "systemImage": "sun.max",
+      "tint": "orange",
+      "default": true
+    },
+    {
+      "id": "persistentChip",
+      "type": "switch",
+      "title": "Keep a Notch Chip",
+      "description": "Leave a calendar chip in the notch so you can open the lake any time. Off keeps the notch clear between events.",
+      "systemImage": "menubar.rectangle",
+      "tint": "blue",
+      "default": true
+    },
+    {
+      "id": "warnMinutes",
+      "type": "slider",
+      "title": "Warn Before Events",
+      "description": "Peek the notch this many minutes before a timed event starts. 0 turns warnings off.",
+      "systemImage": "bell.badge",
+      "tint": "red",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "suffix": "min",
+      "default": 10
+    },
+    {
+      "id": "refreshMinutes",
+      "type": "slider",
+      "title": "Refresh Interval",
+      "description": "How often to download your calendar feeds again",
+      "systemImage": "arrow.clockwise",
+      "tint": "green",
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "suffix": "min",
+      "default": 5
+    },
+    {
+      "id": "calendarAddress",
+      "type": "button",
+      "title": "Calendar Address",
+      "description": "Right-click the lake > Open feeds.txt, then paste a calendar's Secret address in iCal format (Google Calendar > Settings > scroll to the bottom).",
+      "systemImage": "link",
+      "tint": "blue",
+      "buttonTitle": "Open Google Calendar",
+      "url": "https://calendar.google.com/calendar/r/settings"
+    }
+  ]
+}
